@@ -6,8 +6,8 @@
 <template>
     <div>
         <FrontendLayout>
-            <Head title="Home"/>
-            <h1>Home page</h1>
+            <Head title="Contact"/>
+            <h1>Contact page</h1>
         </FrontendLayout>
     </div>
 </template>

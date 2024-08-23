@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [FrontendController::class, 'index']);
+Route::get('/', [FrontendController::class, 'index'])->name('homepage');
+Route::get('/about', [FrontendController::class, 'about'])->name('aboutpage');
+Route::inertia('/contact', 'Frontend/Contactpage')->name('contactpage');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
