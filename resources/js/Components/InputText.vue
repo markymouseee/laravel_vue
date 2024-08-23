@@ -1,15 +1,20 @@
 <script setup>
-    defineProps({
-        type: {
-            type: String,
-            default: "text"
+    import { onMounted, ref } from 'vue';
+
+    const model = defineModel({
+        type: String,
+        required: true
+    });
+
+    const input = ref(null);
+
+    onMounted(() => {
+        if(input.value.hasAttribute('autofocus')){
+            input.value.focus();
         }
     });
 </script>
 
 <template>
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder="name@example.com" id="floatingInput">
-        <label for="floatingInput">Username or email</label>
-    </div>
+    <input class="form-control" id="floatingInput" v-model="model" ref="input"/>
 </template>

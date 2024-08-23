@@ -24,7 +24,7 @@
                     <Link :href="route('contactpage')" class="nav-link active me-5" aria-current="page">Contact</Link>
                 </li>
                 <li class="nav-item">
-                    <Link :href="route('login')" class="nav-link active me-5" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal">Log in</Link>
+                    <Link :href="route('login')" class="nav-link active me-5" aria-current="page" data-bs-toggle="modal" data-bs-target="#loginModal">Log in</Link>
                 </li>
             </ul>
            </div>
