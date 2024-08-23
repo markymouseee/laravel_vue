@@ -12,15 +12,18 @@
            </button>
 
            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto me-5">
                 <li class="nav-item">
-                    <Link :href="route('homepage')" class="nav-link active" aria-current="page">Home</Link>
+                    <Link :href="route('homepage')" class="nav-link active me-5" aria-current="page">Home</Link>
                 </li>
                 <li class="nav-item">
-                    <Link :href="route('aboutpage')" class="nav-link active" aria-current="page">About</Link>
+                    <Link :href="route('aboutpage')" class="nav-link active me-5" aria-current="page">About</Link>
                 </li>
                 <li class="nav-item">
-                    <Link :href="route('contactpage')" class="nav-link active" aria-current="page">Contact</Link>
+                    <Link :href="route('contactpage')" class="nav-link active me-5" aria-current="page">Contact</Link>
+                </li>
+                <li class="nav-item">
+                    <Link :href="route('login')" class="nav-link active me-5" aria-current="page">Log in</Link>
                 </li>
             </ul>
            </div>
