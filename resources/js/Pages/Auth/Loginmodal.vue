@@ -4,6 +4,12 @@
     import { useForm } from '@inertiajs/vue3';
     import { Link } from '@inertiajs/vue3';
 
+    defineProps({
+        id: {
+            type: String
+        }
+    });
+
     const form = useForm({
         email: '',
         password: ''
@@ -24,11 +30,11 @@
                 <div class="modal-body">
                     <h1 class="modal-title fs-5 mb-3">Log in</h1>
                     <div class="form-floating mb-3">
-                        <InputText type="email" id="floatingInput" v-model="form.email" placeholder="name@example.com"/>
+                        <InputText type="email" :id="floatingInput" id="email" v-model="form.email" placeholder="name@example.com"/>
                         <label for="floatingInput">Username or email</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <InputText type="password" id="floatingInput" v-model="form.password" placeholder="name@example.com"/>
+                        <InputText type="password" :id="floatingInput" id="password" v-model="form.password" placeholder="name@example.com"/>
                         <label for="floatingInput">Password</label>
                     </div>
                     

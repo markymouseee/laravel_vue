@@ -9,6 +9,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('homepage');
 Route::get('/about', [FrontendController::class, 'about'])->name('aboutpage');
 Route::inertia('/contact', 'Frontend/Contactpage')->name('contactpage');
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
