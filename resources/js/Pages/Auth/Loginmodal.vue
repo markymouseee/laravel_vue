@@ -24,7 +24,7 @@
 
 <template>
     <form @submit.prevent="submit">
-       <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+       <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -41,12 +41,11 @@
                     <PrimaryButton type="submit" class="w-100">Log in</PrimaryButton>
                     <div class="d-flex justify-content-between mt-3">
                         <Link href="">Forgot password?</Link>
-                        <Link href="">Create account</Link>
+                        <Link data-bs-toggle="modal" data-bs-target="#registrationModal">Create account</Link>
                     </div>
                 </div>
             </div>
         </div>
        </div>
-        
     </form>
 </template>
