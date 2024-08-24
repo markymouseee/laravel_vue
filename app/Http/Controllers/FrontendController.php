@@ -16,4 +16,8 @@ class FrontendController extends Controller
             'title' => 'About Page'
         ]);
     }
+
+    public function dashboard(){
+        return Inertia::render('Dashboard');
+    }
 }

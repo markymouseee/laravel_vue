@@ -10,9 +10,7 @@ Route::get('/about', [FrontendController::class, 'about'])->name('aboutpage');
 Route::inertia('/contact', 'Frontend/Contactpage')->name('contactpage');
 
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [FrontendController::class, 'dashboard']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
