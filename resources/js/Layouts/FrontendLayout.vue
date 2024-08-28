@@ -1,14 +1,12 @@
 <script setup>
     import Navbar from '@/Components/Navbar.vue';
-    import Loginmodal from '@/Pages/Auth/Loginmodal.vue';
-    import Registermodal from '@/Pages/Auth/Registermodal.vue';
+    import Footer from '@/Components/Footer.vue';
 </script>
 
 <template>
     <div>
         <Navbar/>
         <slot/>
-        <Loginmodal/>
-        <Registermodal/>
+        <Footer/>
     </div>
 </template>

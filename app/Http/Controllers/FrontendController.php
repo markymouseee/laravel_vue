@@ -17,6 +17,10 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function login(){
+        return Inertia::render('Frontend/Loginpage');
+    }
+
     public function dashboard(){
         return Inertia::render('Dashboard');
     }

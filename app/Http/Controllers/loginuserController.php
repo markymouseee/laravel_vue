@@ -4,20 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class loginuserController extends Controller
 {
-    public function getUserLogin(Request $request){
-        $credentials = $request->only("email", "password");
+    public function getUserLogin(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
 
-        if(Auth::attempt($credentials)){
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return Redirect::route("homepage")->with("success", "Log in successfully");
+            return redirect()->route('homepage')->with('success', 'Log in successfully');
         }
 
-        return Redirect::back()->withErrors([
-            "email" => 'Username or email not found.'
+        return Inertia::render('Login', [
+            'errors' => [
+                'email' => 'Username or email not found.'
+            ]
         ]);
     }
 }

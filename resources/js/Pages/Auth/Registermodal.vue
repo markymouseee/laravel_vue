@@ -23,8 +23,10 @@
         <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">    
-                    <div class="modal-body">
-                        <h1 class="modal-title fs-5 mb-3">Registration</h1>
+                    <div class="modal-body text-center">
+                        <img src="../../../images/logo.png" class="app-logo ">
+                        <p style="font-family: 'Times New Roman', Times, serif; font-size: 25px;" class="text-success fw-bolder">Legacy College of Compostela</p>
+                        <h1 class="modal-title fs-5 mb-3 text-success">Registration</h1>
                         <div class="form-floating mb-3">
                             <InputText type="text" :id="floatingInput" id="fullname" placeholder="name@examplee.com" v-model="form.fullname"/>
                             <label for="floatingInput">Fullname</label>
@@ -46,10 +48,10 @@
                             <label for="floatingInput">Confirm password</label>
                         </div>
 
-                        <PrimaryButton type="submit" class="w-100">Register</PrimaryButton>
+                        <PrimaryButton type="submit" class="w-100 bg-success">Register</PrimaryButton>
 
                         <div class="mt-3">
-                            <p>Already have an account?<Link data-bs-toggle="modal" data-bs-target="#loginModal" class="ms-1">Log in</Link></p>
+                            <p>Already have an account?<Link data-bs-toggle="modal" data-bs-target="#loginModal" class="ms-1 text-success">Log in</Link></p>
                         </div>
                     </div>
                 </div>
@@ -57,3 +59,9 @@
         </div>
     </form>
 </template>
+
+<style scoped>
+    .app-logo{
+        height:100px;
+    }
+</style>

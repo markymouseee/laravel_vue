@@ -1,33 +1,42 @@
 <script setup>
     import { Link } from '@inertiajs/vue3';
-
+    import AppLogo from './AppLogo.vue';
 </script>
 
 <template>
     <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
-           <a href="#" class="navbar-brand">Navbar</a>
+           <Link :href="route('homepage')"  class="navbar-brand text-light" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;">
+            <AppLogo/>
+            Legacy College of Compostela
+           </Link>
 
-           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navabarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navabarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
            </button>
 
            <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-5">
                 <li class="nav-item">
-                    <Link :href="route('homepage')" class="nav-link active me-5" aria-current="page">Home</Link>
+                    <Link :href="route('homepage')" class="nav-link active me-5 text-light" aria-current="page">Home</Link>
                 </li>
                 <li class="nav-item">
-                    <Link :href="route('aboutpage')" class="nav-link active me-5" aria-current="page">About</Link>
+                    <Link :href="route('aboutpage')" class="nav-link active me-5 text-light" aria-current="page">About</Link>
                 </li>
                 <li class="nav-item">
-                    <Link :href="route('contactpage')" class="nav-link active me-5" aria-current="page">Contact</Link>
+                    <Link :href="route('contactpage')" class="nav-link active me-5 text-light" aria-current="page">Contact</Link>
                 </li>
                 <li class="nav-item">
-                    <Link :href="route('login')" class="nav-link active me-5" aria-current="page" data-bs-toggle="modal" data-bs-target="#loginModal">Log in</Link>
+                    <Link :href="route('loginpage')" class="nav-link active me-5 text-light" aria-current="page">Log in</Link>
                 </li>
             </ul>
            </div>
         </div>
     </nav>
 </template>
+
+<style scoped>
+    .nav-link:hover{
+        text-decoration: underline;
+    }
+</style>
