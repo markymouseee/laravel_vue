@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
            <a href="#" class="navbar-brand">Navbar</a>
 

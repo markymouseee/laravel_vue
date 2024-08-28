@@ -7,7 +7,6 @@
     <div>
         <FrontendLayout>
             <Head title="Home"/>
-            <h1>Home page</h1>
         </FrontendLayout>
     </div>
 </template>
