@@ -17,10 +17,9 @@ class loginuserController extends Controller
             return redirect()->route('homepage')->with('success', 'Log in successfully');
         }
 
-        return Inertia::render('Login', [
-            'errors' => [
-                'email' => 'Username or email not found.'
-            ]
+        // Instead of rendering a view, return an Inertia response with errors
+        return redirect()->back()->withErrors([
+            'email' => 'Username or email not found.',
         ]);
     }
 }
