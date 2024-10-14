@@ -1,15 +1,9 @@
 <script setup>
     import InputText from '@/Components/InputText.vue';
     import PrimaryButton from '@/Components/PrimaryButton.vue';
-    import { useForm } from '@inertiajs/vue3';
-    import { Link } from '@inertiajs/vue3';
+    import InputError from '@/Components/InputError.vue';
+    import { useForm, Link } from '@inertiajs/vue3';
     import { ref } from 'vue';
-
-    defineProps({
-        errormessage: {
-            type: String
-        }
-    });
 
     const showPasswordIcon = ref(false);
 
@@ -49,11 +43,13 @@
                             <div class="form-floating mb-3">
                                 <InputText type="text"  id="email" placeholder="" v-model="form.email"/>
                                 <label for="floatingInput">Username or email</label>
+                                <InputError :message="form.errors.email"/>
                             </div>
                             <div class="form-floating mb-3">
                                 <InputText :type="showPasswordIcon ? 'text' : 'password'"  id="password" placeholder="@" v-model="form.password"/>
                                 <i :class="showPasswordIcon ? 'fa fa-eye' : 'fa fa-eye-slash'" class="position-absolute fs-5 text-secondary icon-password" @click="toggleIconShowPassword"></i>
                                 <label for="floatingInput">Password</label>
+                                <InputError :message="form.errors.password"/>
                             </div>
 
                             <PrimaryButton class="btn btn-success w-100 mt-3">Log in</PrimaryButton>

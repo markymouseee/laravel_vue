@@ -12,9 +12,7 @@ class FrontendController extends Controller
     }
 
     public function about(){
-        return Inertia::render('Frontend/Aboutpage', [
-            'title' => 'About Page'
-        ]);
+        return Inertia::render('Frontend/Aboutpage');
     }
 
     public function login(){

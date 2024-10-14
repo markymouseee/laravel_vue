@@ -12,8 +12,11 @@ Route::inertia('/contact', 'Frontend/Contactpage')->name('contactpage');
 
 Route::get('/login-student', [FrontendController::class,'login'])->name('loginpage');
 Route::post('/login-student', [loginuserController::class,'getUserLogin'])->name('loginuser');
+<<<<<<< HEAD
 
 Route::post('/register-user', [registeruserController::class, 'create'])->name('registeruser');
+=======
+>>>>>>> 8d7564a728df0289ac9d3dcc993aba528d128398
 
 
 Route::get('/dashboard', [FrontendController::class, 'dashboard'])->name('dashboardui');
