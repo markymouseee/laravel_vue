@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules;
-use Illuminate\Validation\ValidationException;
+use App\Http\Requests\loginRequest;
+use App\Models\RegisteredUsers;
+use Illuminate\Support\Facades\Hash;
 
 class registeruserController extends Controller
 {
+    public function create(loginRequest $request){
 
-    /**
-     * Summary of getUserRegistration
-     * 
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function getUserRegistration(Request $request): RedirectResponse
-    {
-        $request->validate([
-            "fullname" => 'required|max:200',
-            "username" => 'unique:store_users|required|max:200|required',
-            'email' => 'unique:store_users|required|max:200|required',
-            'password' => ['required', 'confirmed', Rules\Password::default()],
-        ]);
+        $validated = $request->validated();
+
+        $validated['password'] = Hash::make($validated['password']);
+
+        $user = RegisteredUsers::create($validated);
+
+        return redirect()->route('dashboardui');
+
     }
 }

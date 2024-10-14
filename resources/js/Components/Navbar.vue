@@ -5,8 +5,8 @@
 
 <template>
     <nav class="navbar navbar-expand-lg bg-success">
-        <div class="container-fluid">
-           <Link :href="route('homepage')"  class="navbar-brand text-light" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;">
+        <div class="container container-fluid">
+           <Link :href="route('homepage')"  class="navbar-brand text-light" style="font-family: 'Times New Roman', Times, serif; font-size: 22px; font-weight: 900;">
             <AppLogo/>
             Legacy College of Compostela
            </Link>

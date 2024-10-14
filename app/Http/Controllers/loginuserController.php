@@ -8,19 +8,25 @@ use Inertia\Inertia;
 
 class loginuserController extends Controller
 {
-    public function getUserLogin(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('homepage')->with('success', 'Log in successfully');
-        }
+public function getUserLogin(Request $request)
+{
 
-        return Inertia::render('Login', [
-            'errors' => [
-                'email' => 'Username or email not found.'
-            ]
-        ]);
+    $credentials = $request->validate([
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+
+    if (Auth::attempt($credentials)) {
+
+        return redirect()->intended(route('dashboardui'));
     }
+
+    return Inertia::render('Frontend/Loginpage', [
+        'errors' => [
+            'email' => 'Username or email not found, or password is incorrect.'
+        ]
+    ]);
+}
 }
